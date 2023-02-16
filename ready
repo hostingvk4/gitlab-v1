@@ -1,0 +1,14 @@
+поменять пароль администратора
+https://docs.gitlab.com/ee/security/reset_user_password.html
+зарегистрировать пользователя и дать ему права
+https://repository.prace-ri.eu/git/help/user/admin_area/moderate_users.md
+добавить ssh key 
+cat /home/ivan/.ssh/id_rsa.pub
+
+установить на сервер ssh server, с клиента скопировать публичный ключ и вставить на сервер в authorized_keys,можно будет заходить без пароля
+
+раннер shell 
+
+runner запускается с пользователя gitlab-runner , нужно для него тоже сделать публичный ssh ключ и добавить его на сервер с которым будет соединяться по ssh
+
+на леново сервер с gitlab , на самсунге gitlab-runner, раннер запускает у себя docker-compose, ничего не копируя по ssh через docker-compose -H ssh://ivan@192.168.0.45 up -d и на леново запускаются нужные контейнеры
